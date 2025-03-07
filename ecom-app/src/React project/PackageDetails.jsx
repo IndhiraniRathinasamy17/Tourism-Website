@@ -1,0 +1,72 @@
+import React from "react";
+import "./Styles.css"; 
+
+const packages = [
+    {
+      id: 1,
+      title: "Munnar & Thekkady - 4 Days",
+      price: "₹18,000",
+      image: "https://www.kerala.com/userfiles/1544171705_thekkady.jpg",
+      description: "Explore the lush green tea gardens and wildlife of Munnar & Thekkady.",
+    },
+    {
+      id: 2,
+      title: "Alleppey Houseboat - 3 Days",
+      price: "₹15,000",
+      image: "https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      description: "Relax on a luxury houseboat, enjoying Kerala’s beautiful backwaters.",
+    },
+    {
+      id: 3,
+      title: "Kovalam & Varkala Beach - 5 Days",
+      price: "₹22,000",
+      image: "https://theroamingshoes.com/wp-content/uploads/2020/10/DSC_0299.jpg",
+      description: "A perfect beach vacation with stunning views and water sports.",
+    },
+    {
+      id: 4,
+      title: "Wayanad Nature Retreat - 6 Days",
+      price: "₹28,000",
+      image: "https://www.trawell.in/admin/images/upload/210243717Glass-bridge.jpg",
+      description: "Enjoy misty hills, waterfalls, and wildlife in Wayanad’s dense forests.",
+    },
+    {
+      id: 5,
+      title: "Heritage & Culture Tour - 7 Days",
+      price: "₹35,000",
+      image: "https://s7ap1.scene7.com/is/image/incredibleindia/padmanabha-swamy-temple-thiruvananthapuram-kerala-1-attr-hero?qlt=82&ts=1727367640712",
+      description: "Visit historical sites, ancient temples, and cultural landmarks of Kerala.",
+    },
+    {
+      id: 6,
+      title: "Full Kerala Experience - 10 Days",
+      price: "₹50,000",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKFA6oXprDxpIZM93HsdeCgtbpLg9yZJkxKA&s",
+      description: "A complete journey through Kerala’s top tourist attractions.",
+    }
+  ];
+
+const TourPackages = () => {
+  return (
+    <div className="container">
+      <h1 className="title"> Kerala Tour Packages</h1>
+      <div className="grid">
+        {packages.map((pkg) => (
+          <div key={pkg.id} className="card">
+            <img src={pkg.image} alt={pkg.title} className="card-image" />
+            <div className="card-content">
+              <h2 className="card-title">{pkg.title}</h2>
+              <p className="card-description">{pkg.description}</p>
+              <div className="card-footer">
+                <span className="price">{pkg.price}</span>
+                <button className="book-button">Book Now</button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default TourPackages;
