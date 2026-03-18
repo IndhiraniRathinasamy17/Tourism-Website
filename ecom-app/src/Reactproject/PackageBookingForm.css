@@ -1,0 +1,109 @@
+.package-booking-form {
+  max-width: 1200px;
+  width: 90%;
+  margin: 50px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.package-booking-form h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 28px;
+  color: #222;
+}
+
+.package-booking-form fieldset {
+  border: 1px solid #ddd;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+}
+
+.package-booking-form legend {
+  font-weight: bold;
+  padding: 0 10px;
+  color: #444;
+}
+
+.package-booking-form input,
+.package-booking-form select,
+.package-booking-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.package-booking-form input:focus,
+.package-booking-form select:focus,
+.package-booking-form textarea:focus {
+  border-color: #3085d6;
+  box-shadow: 0 0 6px rgba(48,133,214,0.4);
+}
+
+.package-booking-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.package-booking-form button {
+  padding: 12px 20px;
+  margin: 10px 10px 0 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.package-booking-form button[type="submit"] {
+  background: #3085d6;
+  color: #fff;
+}
+
+.package-booking-form button[type="submit"]:hover {
+  background: #2563b9;
+}
+
+.package-booking-form button[type="reset"] {
+  background: #f44336;
+  color: #fff;
+}
+
+.package-booking-form button[type="reset"]:hover {
+  background: #d32f2f;
+}
+
+.package-booking-form label {
+  display: block;
+  margin: 5px 0;
+  font-size: 14px;
+}
+.package-booking-form input[type="text"],
+.package-booking-form input[type="email"],
+.package-booking-form input[type="number"],
+.package-booking-form input[type="date"],
+.package-booking-form select,
+.package-booking-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* Fix checkboxes */
+.package-booking-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}

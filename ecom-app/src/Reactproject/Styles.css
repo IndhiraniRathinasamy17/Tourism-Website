@@ -1,0 +1,371 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.login-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: left; /* change from center to left */
+}
+
+.login-box label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-box button:hover {
+  background-color: #0056b3;
+}
+
+.password-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.show-password {
+  display: flex;
+  align-items: center;
+  gap: 2px;  /* very small gap */
+  margin-top: 5px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.show-password input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.show-password label {
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+.signup-link {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+}
+
+.link-text {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link-text:hover {
+  color: #0056b3;
+}
+
+.link-text.active {
+  color: #2e7d32;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.signup-error {
+  color: red;
+  margin-top: 10px;
+}
+
+.signup-success {
+  color: green;
+  margin-top: 10px;
+}
+
+/* ===== Body & General Styles ===== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6fa;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Title ===== */
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* ===== Grid Layout for Packages ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 packages per row */
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 50px;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1 per row */
+    gap: 20px;
+  }
+}
+
+/* ===== Card Styling ===== */
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Card Image */
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Card Content */
+.card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.card-description {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #e74c3c;
+}
+
+.book-button {
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+  background-color: #1c5980;
+}
+
+/* ===== Overall Rating ===== */
+.overall-rating {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #e67e22;
+}
+
+.stars {
+  color: #f1c40f;
+  font-size: 1.2rem;
+}
+
+/* ===== Reviews Section ===== */
+.reviews-section {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 100%;
+}
+
+.reviews-section h3 {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+/* Individual Review */
+.review {
+  background-color: #f8f9fa;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border-left: 4px solid #2980b9;
+}
+
+.review strong {
+  color: #2980b9;
+}
+
+.review em {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin-left: 5px;
+}
+
+/* ===== Add Review Form ===== */
+.review-form {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #e1e4e8;
+}
+
+.review-form h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus {
+  border-color: #2980b9;
+  outline: none;
+  box-shadow: 0 0 6px rgba(41, 128, 185, 0.25);
+}
+
+.review-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.review-form button {
+  background-color: #2980b9;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.review-form button:hover {
+  background-color: #1c5980;
+}
+
+/* ===== Reviews List ===== */
+.reviews {
+  margin-top: 20px;
+}
+
+.reviews h4 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.review {
+  background-color: #f8f9fa;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border-left: 4px solid #2980b9;
+}
+
+.review strong {
+  color: #2980b9;
+  font-size: 1rem;
+}
+
+.review .stars {
+  margin-left: 6px;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+.review p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}

@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/
+ecom-app/data/
+backend/node_modules/
+ecom-app/node_modules/

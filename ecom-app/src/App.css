@@ -115,22 +115,6 @@ button{
   margin-left: auto; 
 }
 
-.login-btn,
-.logout-btn {
-  background: #1caae2;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.login-btn:hover,
-.logout-btn:hover {
-  background: #41bbfc;
-}
-
 body {
   background-color: #ffffff; 
 }
@@ -143,4 +127,44 @@ body {
 
 .img img:hover {
   transform: scale(1.1);
+}
+
+.profile-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  min-width: 180px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.profile-dropdown .dropdown-content a,
+.profile-dropdown .dropdown-content button {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #333;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.profile-dropdown .dropdown-content a:hover,
+.profile-dropdown .dropdown-content button:hover {
+  background-color: #f1f1f1;
 }

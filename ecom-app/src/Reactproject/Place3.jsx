@@ -43,8 +43,8 @@ function Slideshow() {
   }, []);
 
   return (
-    <div className="slideshow-container">
-      <div className="slide">
+    <div className="slideshow-container1">
+      <div className="slide1">
         <img src={slides[currentIndex].src} alt={`Slide ${currentIndex}`} />
         <div className="text">{slides[currentIndex].text}</div>
       </div>
