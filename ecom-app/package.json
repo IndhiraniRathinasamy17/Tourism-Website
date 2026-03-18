@@ -1,10 +1,10 @@
 {
   "name": "project-root",
   "version": "1.0.0",
-  "scripts": {
-    "start": "concurrently \"npm run client\" \"npm run server\"",
-    "client": "react-scripts start",
-    "server": "npm --prefix tourism-backend start"
+
+    "scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build"
   },
   "devDependencies": {
     "concurrently": "^8.0.0"
