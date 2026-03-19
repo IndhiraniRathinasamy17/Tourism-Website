@@ -101,7 +101,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-/* ✅ DB + Auth */
+/* ============================= */
+/* ✅ DB + AUTH ROUTES */
+/* ============================= */
+
 connectDB();
 app.use("/api/auth", authRoutes);
 
@@ -123,7 +126,6 @@ if (process.env.RAZORPAY_KEY_ID && process.env.RAZORPAY_SECRET) {
 /* ============================= */
 
 app.post("/create-order", async (req, res) => {
-  // 🔴 If Razorpay not configured
   if (!razorpay) {
     return res.status(500).json({
       error: "Razorpay not configured. Add keys to enable payments.",
@@ -153,7 +155,6 @@ app.post("/create-order", async (req, res) => {
 /* ============================= */
 
 app.post("/verify-payment", (req, res) => {
-  // 🔴 If Razorpay not configured
   if (!process.env.RAZORPAY_SECRET) {
     return res.status(500).json({
       error: "Razorpay not configured. Add keys to verify payment.",
@@ -184,11 +185,12 @@ app.post("/verify-payment", (req, res) => {
 });
 
 /* ============================= */
-/* 🚀 SERVER */
+/* 🚀 SERVER (FIXED FOR RENDER) */
 /* ============================= */
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+// 🔥 IMPORTANT: "0.0.0.0" for Render
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
