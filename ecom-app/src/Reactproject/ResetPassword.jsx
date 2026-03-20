@@ -7,10 +7,12 @@ function ResetPassword() {
   const { token } = useParams();
   const [password, setPassword] = useState("");
 
+  const BASE_URL = "https://tourism-website-1-3of3.onrender.com";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:5000/api/auth/reset-password/${token}`, {
+      const res = await axios.post(`${BASE_URL}/api/auth/reset-password/${token}`, {
         password,
       });
       alert(res.data.message);

@@ -11,6 +11,8 @@ export default function Signup() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+   const BASE_URL = "https://tourism-website-1-3of3.onrender.com";
+
   const handleSignup = async(e) => {
     e.preventDefault();
 
@@ -18,7 +20,7 @@ export default function Signup() {
       setError("Passwords do not match");
       return;
     } 
-    const res = await fetch("http://localhost:5000/api/auth/signup", {
+    const res = await fetch(`${BASE_URL}/api/auth/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

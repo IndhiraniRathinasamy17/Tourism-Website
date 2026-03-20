@@ -79,86 +79,89 @@ export default function PackageBookingForm() {
 
   /* ------------------ Payment Handler ------------------ */
 
-  const handlePayment = async (e) => {
-    e.preventDefault();
+ const handlePayment = async (e) => {
+  e.preventDefault();
 
-    if (!formData.agreeTerms) {
-      Swal.fire({
-        icon: "warning",
-        title: "Please accept Terms & Conditions",
-      });
-      return;
-    }
+  if (!formData.agreeTerms) {
+    Swal.fire({
+      icon: "warning",
+      title: "Please accept Terms & Conditions",
+    });
+    return;
+  }
 
-    const res = await loadRazorpayScript();
+  const res = await loadRazorpayScript();
 
-    if (!res) {
-      Swal.fire({
-        icon: "error",
-        title: "Payment SDK failed to load",
-      });
-      return;
-    }
+  if (!res) {
+    Swal.fire({
+      icon: "error",
+      title: "Payment SDK failed to load",
+    });
+    return;
+  }
 
-    try {
-      const orderData = await fetch("http://localhost:5000/create-order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          amount: formData.totalCost,
-        }),
-      }).then((t) => t.json());
+  try {
+    // ✅ Your deployed backend URL
+    const BACKEND_URL = "https://tourism-website-1-3of3.onrender.com";
 
-      const options = {
-        key: "YOUR_RAZORPAY_KEY_ID",
-        amount: orderData.amount,
-        currency: "INR",
-        name: "Kerala Travel Booking",
-        description: formData.packageName,
-        order_id: orderData.id,
+    const orderData = await fetch(`${BACKEND_URL}/create-order`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        amount: formData.totalCost,
+      }),
+    }).then((res) => res.json());
 
-        handler: function (response) {
-          console.log("Payment Success:", response);
+    const options = {
+      key: "YOUR_RAZORPAY_KEY_ID", // 🔁 replace with your real key
+      amount: orderData.amount,
+      currency: "INR",
+      name: "Kerala Travel Booking",
+      description: formData.packageName,
+      order_id: orderData.id,
 
-          Swal.fire({
-            icon: "success",
-            title: "Payment Successful!",
-            text: "Your booking has been confirmed.",
-          }).then(() => {
-            navigate("/");
-          });
-        },
+      handler: function (response) {
+        console.log("Payment Success:", response);
 
-        prefill: {
-          name: formData.fullName,
-          email: formData.email,
-          contact: formData.phone,
-        },
+        Swal.fire({
+          icon: "success",
+          title: "Payment Successful!",
+          text: "Your booking has been confirmed.",
+        }).then(() => {
+          navigate("/");
+        });
+      },
 
-        notes: {
-          destination: formData.destination,
-          travelers: formData.travelers,
-        },
+      prefill: {
+        name: formData.fullName,
+        email: formData.email,
+        contact: formData.phone,
+      },
 
-        theme: {
-          color: "#3399cc",
-        },
-      };
+      notes: {
+        destination: formData.destination,
+        travelers: formData.travelers,
+      },
 
-      const paymentObject = new window.Razorpay(options);
-      paymentObject.open();
-    } catch (error) {
-      console.error(error);
+      theme: {
+        color: "#3399cc",
+      },
+    };
 
-      Swal.fire({
-        icon: "error",
-        title: "Payment Failed",
-        text: "Something went wrong!",
-      });
-    }
-  };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  } catch (error) {
+    console.error(error);
+
+    Swal.fire({
+      icon: "error",
+      title: "Payment Failed",
+      text: "Something went wrong!",
+    });
+  }
+};
 
   return (
     <div>

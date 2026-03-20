@@ -4,11 +4,12 @@ import "./Styles.css";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
+  const BASE_URL = "https://tourism-website-1-3of3.onrender.com";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/forgot-password", { email });
+      const res = await axios.post(`${BASE_URL}/api/auth/forgot-password`, { email });
       alert(res.data.message);
     } catch (err) {
       alert("Error sending email");

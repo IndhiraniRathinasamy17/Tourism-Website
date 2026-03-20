@@ -17,6 +17,9 @@ export default function BookTravel() {
   const [source, setSource] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const BASE_URL = "https://tourism-website-1-3of3.onrender.com";
+
+
   /* ✅ PLACE → CODE */
   const airportMap = {
     "Thiruvananthapuram International Airport": "TRV"
@@ -64,7 +67,7 @@ export default function BookTravel() {
 
       if (mode === "train") {
         const stationCode = stationMap[place];
-        url = `http://localhost:5000/api/trains?station=${stationCode}`;
+        url = `${BASE_URL}/api/trains?station=${stationCode}`;
       }
 
       if (mode === "flight") {
@@ -75,11 +78,11 @@ export default function BookTravel() {
           return;
         }
 
-        url = `http://localhost:5000/api/flights?source=${source}&destination=${destCode}`;
+        url = `${BASE_URL}/api/flights?source=${source}&destination=${destCode}`;
       }
 
       if (mode === "bus") {
-        url = "http://localhost:5000/api/buses";
+        url = `${BASE_URL}/api/buses`;
       }
 
       const res = await fetch(url);

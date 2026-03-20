@@ -8,6 +8,8 @@ export default function Login({ onLogin }) {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  const BASE_URL = "https://tourism-website-1-3of3.onrender.com";
+
   const handleLogin = async(e) => {
     e.preventDefault();
 
@@ -19,7 +21,7 @@ export default function Login({ onLogin }) {
       });
     } else {
       try {
-        const response = await fetch("http://localhost:5000/api/auth/login", {
+        const response = await fetch(`${BASE_URL}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
