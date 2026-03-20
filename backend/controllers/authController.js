@@ -192,7 +192,7 @@ export const forgotPassword = async (req, res) => {
 
     await user.save();
 
-    const resetLink = `https://vacation-vibes.netlify.app/reset-password/${token}`;
+    const resetLink = `${process.env.CLIENT_URL}/reset-password/${token}`;
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -207,7 +207,7 @@ export const forgotPassword = async (req, res) => {
       subject: "Password Reset",
       html: `
         <h3>Password Reset</h3>
-        <p>Click below link to reset your password:</p>
+        <p>Click below link:</p>
         <a href="${resetLink}">${resetLink}</a>
       `
     });
@@ -215,11 +215,10 @@ export const forgotPassword = async (req, res) => {
     res.json({ message: "Reset link sent to email" });
 
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Error sending email" });
+    console.error("MAIL ERROR:", error);
+    res.status(500).json({ message: error.message });
   }
 };
-
 /* ============================= */
 /* ✅ RESET PASSWORD */
 /* ============================= */
