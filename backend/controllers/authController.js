@@ -192,7 +192,7 @@ export const forgotPassword = async (req, res) => {
 
     await user.save();
 
-    const resetLink = `http://localhost:3000/reset-password/${token}`;
+    const resetLink = `https://vacation-vibes.netlify.app/reset-password/${token}`;
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
