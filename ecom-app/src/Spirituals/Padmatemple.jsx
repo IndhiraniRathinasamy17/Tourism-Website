@@ -10,8 +10,8 @@ const [reviews, setReviews] = useState([]);
   const [reviewName, setReviewName] = useState("");
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-  const [transportData, setTransportData] = useState([]);
-  const [mode, setMode] = useState("");
+  // const [transportData, setTransportData] = useState([]);
+  // const [mode, setMode] = useState("");
   useEffect(() => {
     const storedReviews = JSON.parse(localStorage.getItem("padmaReviews")) || [];
     setReviews(storedReviews);
