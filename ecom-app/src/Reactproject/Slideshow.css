@@ -384,4 +384,11 @@
 .review {
   margin-bottom: 18px;
 }
-
+.link-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+}

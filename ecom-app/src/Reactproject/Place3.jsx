@@ -65,17 +65,22 @@ const Footer = () => {
               <h2>Vacation Vibes</h2>
               <p>&copy; {new Date().getFullYear()} Vacation Vibes, Inc.</p>
               <div className="footer-links">
-                  <a href="#">Legal Stuff</a>
-                  <span>|</span>
-                  <a href="#">Privacy Policy</a>
-                  <span>|</span>
-                  <a href="#">Security</a>
-                  <span>|</span>
-                  <a href="#">Website Accessibility</a>
-                  <span>|</span>
-                  <a href="#">Manage Cookies</a>
-                  <span>|</span>
-                  <a href="#">Your Privacy Choices</a>
+                  <button className="link-btn">Legal Stuff</button>
+        <span>|</span>
+
+        <button className="link-btn">Privacy Policy</button>
+        <span>|</span>
+
+        <button className="link-btn">Security</button>
+        <span>|</span>
+
+        <button className="link-btn">Website Accessibility</button>
+        <span>|</span>
+
+        <button className="link-btn">Manage Cookies</button>
+        <span>|</span>
+
+        <button className="link-btn">Your Privacy Choices</button>
               </div>
               <div className="social-icons">
                   <FiFacebook className="icon" />
